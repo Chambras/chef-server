@@ -247,7 +247,7 @@ require 'pathname'
 file_path = Pathname.new(__FILE__)
 cmd_name = 'opscode' # what does this do? ARGV[0]
 plugin_path = file_path.dirname.parent 
-arguments = ARGV[1..-1] # Get the rest of the command line arguments
+arguments = ARGV[0..-1] # Get the rest of the command line arguments
 
 ctl = Omnibus::ChefServerCtl.new(cmd_name, true, "Chef Server")
 ctl.load_files(plugin_path)
